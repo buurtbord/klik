@@ -192,8 +192,8 @@ void loop(void)
       delay(50);
     }
 
+    Serial.println("You pressed button ");
     int pressedButton = getPressedButton();
-    Serial.println("You pressed button " + String(pressedButton));
     // do shit with pressed button
     byte pressedButtonCounter = 0;
     while (pressedButtonCounter < pressedButton) {
@@ -313,10 +313,13 @@ int getPressedButton() {
   button3Value = analogRead(button3);
   int returnvalue = 0;
   if(button1Value > 500) {
+    Serial.println("Goed idee");
     returnvalue = 1;
   } else if(button2Value > 500) {
+    Serial.println("Slecht idee");
     returnvalue = 2;
   } else if(button3Value > 500) {
+    Serial.println("Ik wil contact");
     returnvalue = 3;
   } else {
     returnvalue = false;
